@@ -1,0 +1,80 @@
+﻿:root {
+    --darkBlue: #163E8C;
+    --mediumLightBlue: #82B8D9;
+    --lightBlue: #99D9F2;
+    --mediumBlue: #1FAFBF;
+    --brown: #BF834E;
+    --white: #fafafa;
+}
+
+.HomePage {
+    background-image: url("../img/pink-suitcase-with-hat-and-globe-on-it.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left 20% bottom 50%;
+    min-height: 100vh;
+}
+
+.Destino{
+    /**/
+}
+
+.Promocoes{
+    /**/
+}
+
+.logo{
+    width: 75px;
+    transition: all .5s ease-in-out;
+}
+
+#home{
+    display: flex;
+    justify-content: right;
+}
+
+#main-text-group {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding: 50px 0;
+    max-width: 50%;
+}
+
+    #main-text-group h2 {
+        margin-bottom: 15px;
+        font-size: 32px
+    }
+
+    #main-text-group p {
+        font-size: 22px
+    }
+
+    #main-text-group #aviso {
+        font-size: 12px;
+        text-align: justify;
+        padding: 8px 0px 8px 8px;
+        margin-top: 50px;
+        border-left: 1px solid var(--mediumLightBlue);
+        border-bottom: 1px solid var(--mediumLightBlue);
+    }
+
+.card {
+    /*border: solid red;*/
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+    @media(max-width: 578px){
+        .HomePage {
+            background-position: right 45% bottom 50%;
+        }
+
+        #home{
+            justify-content: unset;
+        }
+
+        #main-text-group {
+            text-align: unset;
+            max-width: unset;
+        }
+    }

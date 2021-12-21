@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Gerenciamento de Promocões";
+}
+
+<div style="display:flex; justify-content: space-between; align-items: center">
+    <h1>Gerenciamento de Promoções</h1><a class="btn btn-outline-primary" asp-action="Index">Voltar</a>
+</div>
+<a asp-action="Create" class="btn btn-primary">Nova Promoção</a>
+
+
+@if (ViewBag.dados.Count == 0)
+{
+<p>Não existem promoções disponíveis para serem listadas</p>
+} else{
+
+<table class="table">
+    <thead>
+        <th>Local</th>
+        <th>Qtd. dias</th>
+        <th>Hospedagem</th>
+        <th>Café da manhã</th>
+        <th>Passagem aérea</th>
+        <th>Preço</th>
+        <th></th>
+    </thead>
+    <tbody>
+        @foreach (Promocao promocao in ViewBag.dados)
+        {
+        <tr>
+            <td>@promocao.Local</td>
+            <td>@promocao.QuantidadeDias</td>
+            <td>@promocao.Hospedagem</td>
+            <td>@promocao.CafeDaManha</td>
+            <td>@promocao.PassagemAerea</td>
+            <td>@promocao.Preco</td>
+
+            <td>
+                @Html.ActionLink("Editar", "Update", new { id = promocao.Id })
+                @Html.ActionLink("Apagar", "Delete", new { id = promocao.Id })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+}

@@ -1,0 +1,42 @@
+﻿
+
+@{
+    ViewData["Title"] = "Promoções";
+}
+
+<h1>Promoções</h1>
+
+<div class="description-group">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laborum debitis vero aspernatur excepturi, dolore deserunt corporis voluptate delectus provident dolores necessitatibus. Rerum libero recusandae architecto culpa enim dignissimos cupiditate!</p>
+</div>
+
+<ul style="display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; padding: 0;" class="mt-5">
+    @foreach (Promocao promocao in ViewBag.dados)
+    {
+        string preco = (promocao.Preco).ToString();
+
+
+        string number = preco.Substring(0, preco.Length - 2);
+        string decima = preco.Substring(3, preco.Length - 3);
+
+        preco = string.Format("{0},{1}", number, decima);
+    
+    <li class="card" style="min-width: 14rem; max-width: 16rem; margin: 10px;">
+        <img class="card-img-top" src="~/img/aviao-decolando.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@promocao.Local</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Diárias: @promocao.QuantidadeDias</li>
+            <li class="list-group-item">Hospedagem: @promocao.Hospedagem</li>
+            <li class="list-group-item">Café da manhã: @promocao.CafeDaManha</li>
+            <li class="list-group-item">Passgem aérea: @promocao.PassagemAerea</li>
+            <li class="list-group-item">R$: @preco</li>
+        </ul>
+        <div class="card-body">
+            <a asp-action="Contato" class="btn btn-outline-primary">Entre em Contato</a>
+        </div>
+    </li>
+    }
+</ul>

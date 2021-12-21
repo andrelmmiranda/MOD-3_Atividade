@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "MensagemContatos";
+}
+
+
+<div style="display:flex; justify-content: space-between; align-items: center">
+    <h1 style="display:inline-block">Mensagens</h1><a class="btn btn-outline-primary" asp-action="Index">Voltar</a>
+</div>
+
+@if (ViewBag.dados.Count == 0)
+{
+    <p>Não existem mensagens disponíveis para serem listadas</p>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mensagem</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int n = ViewBag.dados.Count; }
+            @foreach (Contato contato in ViewBag.dados)
+            {
+                <tr>
+                    <th scope="row">@n</th>
+                    <td>@contato.Nome</td>
+                    <td>@contato.Email</td>
+                    <td>@contato.Mensagem</td>
+                    <td>
+                        @Html.ActionLink("Apagar", "DeleteContato", new { id = contato.Id })
+                    </td>
+                </tr>
+                n--;
+            }
+        </tbody>
+    </table>
+}

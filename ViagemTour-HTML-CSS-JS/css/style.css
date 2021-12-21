@@ -1,0 +1,217 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root{
+  --darkBlue:#163E8C; 
+  --mediumLightBlue: #82B8D9;
+  --lightBlue: #99D9F2;
+  --mediumBlue: #1FAFBF;
+  --brown: #BF834E;
+  --white: #fafafa;
+}
+
+.container{
+  margin: 0 auto;
+  width: 80%;
+  display: inherit;
+  flex-direction: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}
+
+.description-group{
+  margin-bottom: 25px;
+  color: var(--darkBlue);
+}
+
+.description-group h2{
+  font-size: 26px;
+  padding: 8px 0;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  box-shadow: 5px 1px 12px 2px rgba(0, 0, 0, .5);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #8adad0;
+  z-index: 2;
+}
+
+header h1 img{
+  width: 100px;
+  transition: all .5s ease-in-out; 
+}
+
+nav{
+  width: 70%;
+  display: flex;
+  justify-content: right;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+nav a{
+  color: var(--white);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+main{
+  display: flex;
+  justify-content: right;
+  color: var(--darkBlue);
+
+  background-image: url('../img/pink-suitcase-with-hat-and-globe-on-it.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 25% 25%;
+  
+  height: 700px;
+}
+
+#main-text-group{  
+  display: flex;
+  flex-direction: column;
+  
+  text-align: right;
+  padding: 50px 0;
+  max-width: 50%;
+}
+
+#main-text-group h2{
+  margin-bottom: 15px;
+  font-size: 32px
+}
+
+#main-text-group p{
+  font-size: 22px
+}
+
+#main-text-group #aviso{
+  font-size: 12px;
+  text-align: justify;
+  padding: 8px 0px 8px 8px;
+
+  margin-top: 50px;
+  border-left: 1px solid var(--mediumLightBlue);
+  border-bottom: 1px solid var(--mediumLightBlue);
+}
+
+#destino{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 50px 0;
+}
+
+#card-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+#destino .card{
+  border: 3px solid var(--lightBlue);
+  background: var(--mediumLightBlue);
+  width: 45%;
+}
+
+.card figure{
+  position: relative;
+  overflow: hidden;
+}
+
+.card img{
+  width: 100%;
+  transition: all 1.5s;
+}
+
+.card figure:hover img{
+  transform: scale(1.5) rotate(10deg);
+  transition: all 1.5s;
+}
+
+.card figcaption{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 8px;
+  color: transparent;
+  transition: all 1s ease-in-out;
+}
+
+.card figure:hover figcaption{
+  color: var(--white);
+  background-color: rgba(0, 0, 0, .3);
+  transition: all 1s ease-in-out;
+}
+
+.card p{
+  padding: 6px;
+  color: var(--white);
+  font-weight: bold;
+}
+
+.card p a{
+  color: var(--darkBlue);
+  margin-left: 5px;
+}
+
+footer{
+  background: var(--mediumBlue);
+  color: var(--darkBlue);
+}
+
+#footer-group{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px 0;
+  width: 40%;
+  margin: 0 auto;
+}
+
+#footer-group img{
+  width: 50px;
+  height: auto;
+}
+
+#footer-group a{
+  color: var(--white);
+  padding: 4px 0;
+}
+
+#copy{
+  background: var(--lightBlue);
+  text-align: center;
+  padding: 8px 0;
+}
+
+input, textarea{
+  outline: 0;
+  text-indent: 6px;
+  border: 2px solid #82b8d9;
+  font-size: 16px;
+}
+
+input::placeholder, textarea::placeholder{
+  color: var(--darkBlue);
+}
+
+input:hover, textarea:hover{
+  box-shadow: 0px 0px 8px 4px #82b8d9;
+}
